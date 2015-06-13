@@ -1,0 +1,15 @@
+<%= form_for registered_application do |f| %>
+  <% if registered_application.errors.any? %>
+    <h3>There are <%= pluralize(registered_application.errors.count, 'error') %></h3>
+    <ul>
+      <% registered_application.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.submit 'Save Website' %>
+<% end %>

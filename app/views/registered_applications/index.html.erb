@@ -1,0 +1,11 @@
+<div class="container">
+  <h2><%= current_user.name %>'s websites</h2>
+  <% current_user.registered_applications.each do |registered_application| %>
+    <p>
+      <%= link_to registered_application.url, edit_registered_application_path(registered_application) %> |
+      <%= link_to 'Delete', registered_application, method: :delete, data: { confirm: 'Are you sure you want to delete your website?' } %>
+    </p>
+  <% end %>
+
+  <p><%= link_to 'Add Website', new_registered_application_path %></p>
+</div>
