@@ -1,5 +1,11 @@
 class RegisteredApplicationsController < ApplicationController
   def index
+    @registered_application = RegisteredApplication.all
+  end
+
+  def show
+    @registered_application = RegisteredApplication.find(params[:id])
+    @events = @registered_application.events.group_by(&:name)
   end
 
   def new
@@ -35,7 +41,7 @@ class RegisteredApplicationsController < ApplicationController
 
   def destroy
     registered_application = RegisteredApplication.find(params[:id])
-    website.destroy
+    registered_application.destroy
     flash[:notice] = 'The website was deleted successfully.'
     redirect_to registered_applications_path
   end
@@ -43,6 +49,6 @@ class RegisteredApplicationsController < ApplicationController
   private
 
   def registered_applications_params
-    params.require(:registered_application).permit(:url)
+    params.require(:registered_application).permit(:id, :url)
   end
 end

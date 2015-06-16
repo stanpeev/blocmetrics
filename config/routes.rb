@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users
   
   resources :registered_applications
-
+  resources :events
 
   get 'welcome/index'
 

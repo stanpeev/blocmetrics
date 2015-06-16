@@ -27,6 +27,9 @@ gem 'better_errors'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
+gem 'faker'
+gem 'pundit'
+gem 'rails-erd'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
