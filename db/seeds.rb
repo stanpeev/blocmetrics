@@ -16,7 +16,7 @@ users = User.all
 10.times do
   RegisteredApplication.create!(
     user:     users.sample,
-    url:      Faker::Internet.domain_name,
+    url:      Faker::Internet.url,
     name:    Faker::App.name
     )
 end
