@@ -1,4 +1,5 @@
-class EventsController < ApplicationController
+class API::EventsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     @events = Event.all
   end
@@ -16,18 +17,18 @@ class EventsController < ApplicationController
   end
 
   def create
-    @registered_application = RegisteredApplication.find(params[:registered_application_id])
-    @event = @registered_application.events.build(event_params)
-    authorize @event
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-       format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
-    end
+     registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
+     
+     if !registered_application
+       render json: "Unregistered application", status: :unprocessable_entity
+     else
+       @event = registered_application.events.new(event_params)
+       if @event.save
+        render json:@event, status: :created
+       else
+        render json:@event.errors, status: :unprocessable_entity
+       end
+     end
   end
 
   def update
@@ -44,6 +45,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event = Event.find(params[:id])
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
@@ -53,12 +55,8 @@ class EventsController < ApplicationController
 
   private
 
-  def set_event
-    @event = Event.find(params[:id])
-  end
-
   def events_params
-    params.require(:event).permit(:name, :registered_application_id)
+    params.require(:event).permit(:name)
   end
 
 end

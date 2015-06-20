@@ -12,10 +12,10 @@
   </p>
 
   <p>
-    <strong>Events:</strong>
-      <% @registered_application.events.each do |event| %>
-        <p><%= link_to @registered_application.event.name, registered_application.event %></p>
-      <% end %>
+   <strong>Events:</strong><br>
+    <% @event_count.each do |event, number| %>
+      <%= event %>: <%= number %><br>
+    <% end %>
   </p>
 
   <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
