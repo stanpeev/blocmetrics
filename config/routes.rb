@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # #1
   namespace :api, defaults: { format: :json } do
   # #2
-    resources :events, only: [:create]
+    match 'create_event', to: 'events#create', via: [:options]
+    resources :events, only: [:create, :index]
    end
 
   get 'welcome/index'

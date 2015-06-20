@@ -1,5 +1,7 @@
 class API::EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_filter :set_access_control_headers
+
   def index
     @events = Event.all
   end
@@ -52,6 +54,15 @@ class API::EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def set_access_control_headers
+ # #1
+     headers['Access-Control-Allow-Origin'] = '*'
+ # #2
+     headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+ # #3
+     headers['Access-Control-Allow-Headers'] = 'Content-Type'
+   end
 
   private
 
