@@ -17,6 +17,142 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+$white_opaque: rgba(250, 250, 250, .3);
+ $dark: #1F7972;
+
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  width: 50%;
+  max-width: 750px;
+  background: $white_opaque;
+  margin: 3em auto 0 auto;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
+  box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+  padding: 1em 0;
+}
+
+#user_name {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: white;
+    transition: all .4s ease-in-out;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+#index_row {
+
+  .row {
+    width: 100%;
+    border-top: 1px solid rgba(250,250,250, .3);
+    border-bottom: 1px solid rgba(250,250,250, .3);
+
+    .registered_app {
+      width: 80%;
+      float: left;
+      p {
+        margin: 0;
+        padding: 1em 2em;
+        color: $dark;
+        font-weight: 100;
+      }
+    }
+    .trash {
+      width: 10%;
+      float: left;
+      text-align: center;
+      border-left: 1px solid rgba(250,250,250, .3);
+      padding: 1em 0 0 8em;
+    }
+
+    i {
+      color: white;
+      transition: all .4s ease-in-out;
+      &:hover {
+        color: $dark;
+      }
+    }
+  }
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.row {
+    width: 100%;
+    border-top: 1px solid rgba(250,250,250, .3);
+    border-bottom: 1px solid rgba(250,250,250, .3);
+    }
+
+.registered_app {
+      width: 80%;
+      float: left;
+      p {
+        margin: 0;
+        padding: 1em;
+        color: $dark;
+        font-weight: 100;
+      }
+    }
+
+.trash {
+      width: 10%;
+      float: left;
+      text-align: center;
+      border-left: 1px solid rgba(250,250,250, .3);
+      padding: 1em 0;
+    }
+
+i {
+      color: white;
+      transition: all .4s ease-in-out;
+      &:hover {
+        color: $dark;
+      }
+  }
+
+  .add_website {
+  display: block;
+  margin: 1.5em auto 0 auto;
+  text-align: center;
+  font-size: 0.8em;
+  color: white;
+  a {
+    color: white;
+  }
+}
 
  .user-info {
    margin-top: 9px;

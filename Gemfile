@@ -30,6 +30,7 @@ gem 'figaro'
 gem 'faker'
 gem 'pundit'
 gem 'rails-erd'
+gem 'chartkick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

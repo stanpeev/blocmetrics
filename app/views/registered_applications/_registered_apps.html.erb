@@ -1,0 +1,15 @@
+<div class="row clearfix">
+    <h2 id="user_name"><%= current_user.name %>'s websites</h2>
+      <% current_user.registered_applications.each do |registered_application| %>
+        <div class="registered_app">
+          <p>
+            <%= link_to registered_application.url, registered_application_path(registered_application) %>
+          </p>
+        </div>
+        <div class="trash">
+          <%= link_to registered_application, method: :delete, data: { confirm: 'Are you sure you want to delete your website?' } do %>
+            <i class="glyphicon glyphicon-trash"></i>
+          <% end %>
+        </div>
+      <% end %>
+</div>
