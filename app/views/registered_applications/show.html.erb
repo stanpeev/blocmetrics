@@ -1,24 +1,21 @@
-<div class="container">
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Url:</strong>
+  <h2 id="app_url">
     <%= @registered_application.url %>
-  </p>
+  </h2>
 
-  <p>
-    <strong>User:</strong>
-    <%= @registered_application.user.name %>
-  </p>
-
+<div class="row clearfix">
   <p>
    <strong>Events:</strong><br>
     <% @event_count.each do |event, number| %>
       <%= event %>: <%= number %><br>
     <% end %>
   </p>
-
-  <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
-  <%= link_to 'Back', registered_applications_path %>
 </div>
+
+  <div class="registered_app_nav">
+    <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
+    <%= link_to 'Back', registered_applications_path %>
+  </div>
+
 

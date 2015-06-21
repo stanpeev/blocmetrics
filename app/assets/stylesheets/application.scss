@@ -37,6 +37,61 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.user-info {
+  margin-right: 15px;
+   a {
+    text-decoration: none;
+    color: $dark;
+    transition: all .4s ease-in-out;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+.nav {
+  a {
+    text-decoration: none;
+    color: $dark;
+    transition: all .4s ease-in-out;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+  padding-bottom: 5px;
+}
+
+.title-wrapper {
+  margin-top: 40px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  padding-bottom: 10px;
+  a {
+    text-decoration: none;
+    color: white;
+    transition: all .4s ease-in-out;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+.subtitle {
+    margin: 0 0 3em 0;
+  text-align: center;
+  font-size: 0.9em;
+  color: $dark;
+  font-weight: 100;
+}
+
+
 .container {
   width: 50%;
   max-width: 750px;
@@ -48,13 +103,14 @@ body {
   padding: 1em 0;
 }
 
-#user_name {
+.user_name {
   text-align: center;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 5rem;
   text-transform: uppercase;
   color: white;
   margin: 0;
+  padding-bottom: 10px;
   a {
     text-decoration: none;
     color: white;
@@ -65,37 +121,20 @@ body {
   }
 }
 
-#index_row {
-
-  .row {
-    width: 100%;
-    border-top: 1px solid rgba(250,250,250, .3);
-    border-bottom: 1px solid rgba(250,250,250, .3);
-
-    .registered_app {
-      width: 80%;
-      float: left;
-      p {
-        margin: 0;
-        padding: 1em 2em;
-        color: $dark;
-        font-weight: 100;
-      }
-    }
-    .trash {
-      width: 10%;
-      float: left;
-      text-align: center;
-      border-left: 1px solid rgba(250,250,250, .3);
-      padding: 1em 0 0 8em;
-    }
-
-    i {
-      color: white;
-      transition: all .4s ease-in-out;
-      &:hover {
-        color: $dark;
-      }
+#app_url {
+  text-align: center;
+  font-weight: 700;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  padding-bottom: 10px;
+  a {
+    text-decoration: none;
+    color: white;
+    transition: all .4s ease-in-out;
+    &:hover {
+      opacity: 0.4;
     }
   }
 }
@@ -114,6 +153,7 @@ body {
     width: 100%;
     border-top: 1px solid rgba(250,250,250, .3);
     border-bottom: 1px solid rgba(250,250,250, .3);
+    margin: 0px;
     }
 
 .registered_app {
@@ -124,7 +164,14 @@ body {
         padding: 1em;
         color: $dark;
         font-weight: 100;
+      a {
+        color: white;
+        transition: all .4s ease-in-out;
+      &:hover {
+        color: $dark;
+        }
       }
+    }
     }
 
 .trash {
@@ -133,6 +180,7 @@ body {
       text-align: center;
       border-left: 1px solid rgba(250,250,250, .3);
       padding: 1em 0;
+      margin-left: 70px;
     }
 
 i {
@@ -154,10 +202,39 @@ i {
   }
 }
 
+.registered_app_nav {
+    display: block;
+  margin: 1.5em auto 0 auto;
+  text-align: center;
+  font-size: 0.8em;
+  color: white;
+  a {
+    color: white;
+  }
+
+}
+
  .user-info {
    margin-top: 9px;
  }
  
  .nav {
    margin-top: 5px;
+ }
+
+ #notice-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(135, 216, 211, 0.85);
+    p {
+    padding: 2.5rem 0;
+    text-align: center;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    } 
  }
